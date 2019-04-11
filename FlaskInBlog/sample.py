@@ -2,7 +2,8 @@ __author__ = 'tiger'
 # Sample.py
 
 from flask import Flask, render_template, url_for, request, redirect
-
+from raven.contrib.flask import Sentry
+sentry = Sentry(app, dsn='YOUR_DSN_HERE')
 app = Flask(__name__)
 
 @app.route('/')
